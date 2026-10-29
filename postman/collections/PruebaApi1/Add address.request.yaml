@@ -1,0 +1,32 @@
+$kind: http-request
+url: http://127.0.0.1:8000/api/address?country=German&zipcode=1986&email=rosa24@gmail.com
+method: POST
+queryParams:
+  - key: country
+    value: German
+    disabled: false
+    description: ""
+  - key: zipcode
+    value: "1986"
+    disabled: false
+    description: ""
+  - key: email
+    value: rosa24@gmail.com
+    disabled: false
+    description: ""
+body:
+  type: formdata
+  content:
+    - type: text
+      key: country
+      value: German
+      disabled: false
+    - type: text
+      key: zipcode
+      value: "1986"
+      disabled: false
+    - type: text
+      key: email
+      value: rosa24@gmail.com
+      disabled: false
+order: 4000

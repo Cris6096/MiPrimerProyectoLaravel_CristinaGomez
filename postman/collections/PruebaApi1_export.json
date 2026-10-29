@@ -1,0 +1,128 @@
+{
+  "info": {
+    "name": "PruebaApi1",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Add User",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            { "key": "name", "value": "rosa", "type": "text" },
+            { "key": "email", "value": "rosa24@gmail.com", "type": "text" },
+            { "key": "password", "value": "123456", "type": "text" },
+            { "key": "c_password", "value": "123456", "type": "text" }
+          ]
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/register?name=Rosa&email=rosa24@gmail.com&password=123456&c_password=123456",
+          "protocol": "http",
+          "host": ["127", "0", "0", "1"],
+          "port": "8000",
+          "path": ["api", "register"],
+          "query": [
+            { "key": "name", "value": "Rosa" },
+            { "key": "email", "value": "rosa24@gmail.com" },
+            { "key": "password", "value": "123456" },
+            { "key": "c_password", "value": "123456" }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get User",
+      "request": {
+        "method": "GET",
+        "header": [
+          { "key": "Accept", "value": "application/json" }
+        ],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/user/3",
+          "protocol": "http",
+          "host": ["127", "0", "0", "1"],
+          "port": "8000",
+          "path": ["api", "user", "3"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get User Address (user)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/user/2/address",
+          "protocol": "http",
+          "host": ["127", "0", "0", "1"],
+          "port": "8000",
+          "path": ["api", "user", "2", "address"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Add address",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            { "key": "country", "value": "German", "type": "text" },
+            { "key": "zipcode", "value": "1986", "type": "text" },
+            { "key": "email", "value": "rosa24@gmail.com", "type": "text" }
+          ]
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/address?country=German&zipcode=1986&email=rosa24@gmail.com",
+          "protocol": "http",
+          "host": ["127", "0", "0", "1"],
+          "port": "8000",
+          "path": ["api", "address"],
+          "query": [
+            { "key": "country", "value": "German" },
+            { "key": "zipcode", "value": "1986" },
+            { "key": "email", "value": "rosa24@gmail.com" }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Address",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/address/3",
+          "protocol": "http",
+          "host": ["127", "0", "0", "1"],
+          "port": "8000",
+          "path": ["api", "address", "3"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Address User (address)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/address//user",
+          "protocol": "http",
+          "host": ["127", "0", "0", "1"],
+          "port": "8000",
+          "path": ["api", "address", "", "user"]
+        }
+      },
+      "response": []
+    }
+  ]
+}

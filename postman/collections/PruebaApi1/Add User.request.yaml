@@ -1,0 +1,28 @@
+$kind: http-request
+url: http://127.0.0.1:8000/api/register?name=Rosa&email=rosa24@gmail.com&password=123456&c_password=123456
+method: POST
+queryParams:
+  name: Rosa
+  email: rosa24@gmail.com
+  password: "123456"
+  c_password: "123456"
+body:
+  type: formdata
+  content:
+    - type: text
+      key: name
+      value: rosa
+      disabled: false
+    - type: text
+      key: email
+      value: rosa24@gmail.com
+      disabled: false
+    - type: text
+      key: password
+      value: "123456"
+      disabled: false
+    - type: text
+      key: c_password
+      value: "123456"
+      disabled: false
+order: 1000
