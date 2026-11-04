@@ -1,0 +1,23 @@
+$kind: http-request
+url: http://127.0.0.1:8000/api
+method: POST
+body:
+  type: formdata
+  content:
+    - type: text
+      key: event_name
+      value: Holika
+      description: ""
+      disabled: false
+    - type: text
+      key: event_detail
+      value: Festival de Musica
+      description: ""
+      disabled: false
+    - type: text
+      key: event_type_id
+      value: ""
+      description: ""
+      disabled: false
+examples: .resources/Add Event.resources/examples
+order: 11000
