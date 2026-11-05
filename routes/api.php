@@ -23,6 +23,7 @@ Route::controller(UserController::class)->group(function(){
 Route::controller(AddressController::class)->group(function() {
     Route::post('address', 'store');
     Route::get('address/{address}', 'show');
+    Route::get('address', 'index');
     Route::get('address/{address}/user', 'show_user');
 });
 
@@ -32,9 +33,14 @@ Route::controller(EventController::class)->group(function() {
     Route::get('event', 'index');
     Route::get('event/{event}', 'show');
     Route::get('event/{event}/user', 'listUsers');
+    Route::delete('event/{event}', 'destroy');
+    Route::put('event/{event}', 'update');
 });
 
 Route::controller(EventTypeController::class)->group(function() {
     Route::get('type/{type}', 'listEvents');
+    Route::post('type', 'store');
+    Route::put('type/{type}', 'update');
+    Route::delete('type/{type}', 'destroy');
 });
 

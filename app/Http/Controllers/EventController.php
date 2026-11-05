@@ -94,7 +94,25 @@ class EventController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $event = Event::findOrFail($id);
+
+        $validatedData = $request->validate([
+            'event_name'    => 'sometimes|required|string|max:255',
+            'event_detail'  => 'nullable|string',
+            'event_type_id' => 'sometimes|required|exists:event_types,id',
+        ]);
+
+        if (!$event->update($validatedData)) {
+            return response()->json([
+                'message' => 'No se pudo actualizar el evento',
+                'data'    => null
+            ], 500);
+        }
+
+        return response()->json([
+            'message' => 'Evento actualizado con éxito',
+            'data'    => $event
+        ], 200);
     }
 
     /**
@@ -102,6 +120,18 @@ class EventController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $event = Event::findOrFail($id);
+
+        if (!$event->delete()) {
+            return response()->json([
+                'message' => 'No se pudo eliminar el evento',
+                'data'    => null
+            ], 500);
+        }
+
+        return response()->json([
+            'message' => 'Evento eliminado con éxito',
+            'data'    => null
+        ], 200);
     }
 }
