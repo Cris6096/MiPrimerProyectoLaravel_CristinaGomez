@@ -66,4 +66,12 @@ class AddressController extends Controller
             'zipcode' => 'required|string|max:20',
         ]);
     }
+
+    public function index()
+    {
+        return response()->json([
+            'message' => null,
+            'data'    => Address::all()
+        ], 200);
+    }
 }
